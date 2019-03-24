@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <meta charset="UTF-8"></meta>
         <title>Winner Team</title>
@@ -11,40 +12,43 @@
         <h:graphicImage class="logo" library="images" name="logo.jpg" />
         <div class="tabContainer">
             <div class="buttonContainer">
-                <button onclick="showPanel(0,'#1f3877')">Name</button>
+                <button onclick="showPanel(0,'#1f3877')">Party Name</button>
                 <button onclick="showPanel(1,'#1f3877')">Business Name</button>
-                <button onclick="showPanel(2,'#1f3877')">Party Name</button>
-                <button onclick="showPanel(3,'#1f3877')">Citation Number</button>
-                <button onclick="showPanel(4,'#1f3877')">Case Number</button>
+                <button onclick="showPanel(2,'#1f3877')">Citation Number</button>
+                <button onclick="showPanel(3,'#1f3877')">Case Number</button>
             </div>
             <div class="tabPanel">
                 <h:form>
-                First Name: <h:inputText  />
-                Last Name: <h:inputText  />
+                    First Name: <h:inputText maxlength="10">
+                        <f:validateRegex pattern="[a-zA-Z]{2,}" />
+                    </h:inputText>
+                    Last Name: <h:inputText  maxlength="10">
+                        <f:validateRegex pattern="[a-zA-Z]{2,}" />
+                    </h:inputText>
                 <h:commandButton value="Search" action="list.xhtml" />
                 </h:form>
             </div>
             <div class="tabPanel">
                 <h:form>
-                Business Name: <h:inputText  />
+                Business Name: <h:inputText maxlength="15">
+                        <f:validateRegex pattern="[a-zA-Z]{4,}" />
+                    </h:inputText>
                 <h:commandButton value="Search" action="list.xhtml" />
                 </h:form>
             </div>
             <div class="tabPanel">
                 <h:form>
-                Party Name: <h:inputText  />
+                Citation Number: <h:inputText maxlength="15">
+                        <f:validateRegex pattern="[0-9]{5,}" />
+                    </h:inputText>
                 <h:commandButton value="Search" action="list.xhtml" />
                 </h:form>
             </div>
             <div class="tabPanel">
                 <h:form>
-                Citation Number: <h:inputText  />
-                <h:commandButton value="Search" action="list.xhtml" />
-                </h:form>
-            </div>
-            <div class="tabPanel">
-                <h:form>
-                Case Number: <h:inputText  />
+                Case Number: <h:inputText maxlength="15">
+                        <f:validateRegex pattern="[0-9]{5,}" />
+                    </h:inputText>
                 <h:commandButton value="Search" action="list.xhtml" />
                 </h:form>
             </div>
