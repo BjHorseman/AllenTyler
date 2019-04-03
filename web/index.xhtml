@@ -30,10 +30,10 @@
             </div>
             <div class="tabPanel">
                 <h:form>
-                Business Name: <h:inputText maxlength="15">
-                        <f:validateRegex pattern="[a-zA-Z]{4,}" />
+                    Business Name: <h:inputText maxlength="15" value="#{searchBean.businessName}">
+                        
                     </h:inputText>
-                <h:commandButton value="Search" action="list.xhtml" />
+                <h:commandButton value="Submit" action="test.xhtml" />
                 </h:form>
             </div>
             <div class="tabPanel">
